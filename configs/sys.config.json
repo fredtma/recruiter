@@ -1,0 +1,42 @@
+{
+  "env":"dev",
+  "debug": true,
+  "dev": {
+    "client": {
+      "js": [
+        "app/app.js",
+        "app/views/advert/advert.module.js",
+        "app/views/advert/advert.controller.js"
+      ],
+      "sass": ""
+    },
+    "vendor": {
+      "css": [
+        "app/styles/h5bp.css",
+        "app/styles/main.css",
+        "app/bower_components/html5-boilerplate/dist/css/normalize.css",
+        "app/bower_components/html5-boilerplate/dist/css/main.css",
+        "app/bower_components/bootstrap/dist/css/bootstrap.min.css",
+        "app/app.css"
+      ],
+      "js": [
+        "app/bower_components/angular/angular.js",
+        "app/bower_components/angular-animate/angular-animate.min.js",
+        "app/bower_components/angular-ui-router/release/angular-ui-router.js",
+        "app/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"
+      ]
+    },
+    "source": {
+      "elements": "public/elements/**/*.html",
+      "img": "public/img/**/*.+(png|jpg|gif|svg|jpeg)",
+      "font": ["public/vendor/**/*.+(eot|svg|ttf|woff|woff2)"]
+    },
+    "output":{
+      "css": "app/css/",
+      "js": "app/scripts/",
+      "img": "app/img/",
+      "font": "app/fonts/",
+      "elements": "app/elements-vulcanized/"
+    }
+  }
+}

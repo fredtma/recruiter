@@ -1,0 +1,88 @@
+<main>
+
+   <div class="content-wrapper">
+      <div class="row">
+         <div class="col-sm-12">
+         
+            <div class="panel panel-default">
+               <div class="panel-heading" style="font-size:18px;">Add Advert</div>
+               <div class="panel-body">
+                <form name="form" ng-submit="call.submit(form)">
+                  <div class="alert alert-danger" ng-if="property.errors.length">
+                    <ul ng-repeat="error in property.errors">
+                        <li ng-bind="error.detail"></li>
+                    </ul>
+                  </div>
+                 
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Advert Name" required
+                        ng-model="model.name">
+                    </div>
+                    <div class="form-group">
+                      <label for="tel">Contact Number</label>
+                      <input type="tel" class="form-control" id="tel" name="tel" placeholder="Telephone Or Cell"
+                        ng-model="model.contact.tel">
+                    </div>
+                    <div class="form-group">
+                      <label for="eamil">Contact Eamil</label>
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Email Address"
+                        ng-model="model.contact.email">
+                    </div>
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <textarea id="description" name="description" required
+                        class="form-control" rows="3" ng-model="model.description"></textarea></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="start">Start Date</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control"
+                            uib-datepicker-popup="{{format}}"
+                            ng-model="model.start" id="start"
+                            is-open="property.calendar.start"
+                            ng-focus="call.open('start')"
+                            ng-required="true"
+                            close-text="Close" />
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="call.open('start')">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="start">End Date</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control"
+                            uib-datepicker-popup="{{format}}"
+                            ng-model="model.end" id="end"
+                            is-open="property.calendar.end"
+                            ng-required="true"
+                            ng-focus="call.open('end')"
+                            close-text="Close" />
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="call.open('end')">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                 
+                  <div class="form-group" style="text-align: right;">
+                      <div class="col-sm-12">
+                          <a ui-href='advert.index'>
+                            <button class="btn btn-default" type="button" style="width: 80px; font-size: 13px;">Cancel</button>
+                          </a>
+                          <button class="btn btn-primary" type="submit" style="width: 80px; font-size: 13px;">Submit</button>
+                      </div>
+                  </div>
+                </form>
+               </div>
+            </div>
+            <!-- END panel-->
+         </div>
+      </div>
+   </div>
+
+</main>

@@ -1,0 +1,64 @@
+    <main>
+      <div class="content-wrapper">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- START panel-->
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="font-size:18px;">All Adverts</div>
+                    <div class="panel-body">
+
+                        <div style="margin-bottom: 15px;" class="text-right">
+                            <a ui-sref="advert.create" class="btn btn-primary text-white" style="font-size: 13px; color:#ffffff;">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                Add
+                            </a>
+                        </div>
+
+                        <input type="text" class="form-control input-sm m-b-md" id="filter" placeholder="Search...">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table-condense table table-stripped">
+                                <thead>
+                                  <tr>
+                                      <th>Name</th><th>Contact</th><th>Desctiption</th><th>Start</th><th>End</th>
+                                      <th data-ignore="highlight" width="90px;">Actions</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+
+                                  <tr class="gradeX" ng-repeat="model in ::models">
+                                      <td ng-bind="model.name"></td>
+                                      <td ng-bind="model.contact.tel +' '+model.contact.email"></td>
+                                      <td ng-bind="model.description"></td>
+                                      <td ng-bind="model.start | date:'mediumDate'"></td>
+                                      <td ng-bind="model.end | date:'mediumDate'"></td>
+                                      <td data-sort-ignore="true" class="right">
+                                          <!--<a ui-href="advert.view({slug:model.slug})">-->
+                                          <!--  <em class="icon-menu tableactions"></em>&nbsp;-->
+                                          <!--</a>-->
+                                          <!--<a href="{{advert.edit({slug:model.slug})}}">-->
+                                          <!--  <em class="icon-note tableactions"></em>&nbsp;-->
+                                          <!--</a>-->
+                                          <button ng-click="call.remove($index)" class="btn btn-danger">
+                                            <em class="glyphicon glyphicon-trash "></em>&nbsp;
+                                          </button>
+                                      </td>
+                                  </tr>
+                                </tbody>
+                                <tfoot>
+                                  <tr>
+                                      <td colspan="6" id="pagination">
+                                          <ul class="pagination pull-right"></ul>
+                                      </td>
+                                  </tr>
+                                </tfoot>
+                            </table>
+                        </div><!-- responsive -->
+                    </div>
+                </div>
+                <!-- END panel-->
+            </div>
+        </div>
+    </div>
+
+    </main>
